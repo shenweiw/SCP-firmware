@@ -12,6 +12,7 @@ jobs:
     - name: apt install, make
       run:
         sudo apt-get install gcc-arm-none-eabi binutils-arm-none-eabi
-        make CC=/usr/bin/arm-none-eabi-gcc PRODUCT=sgm775 MODE=debug firmware-scp_ramfw
+        dpkg -L gcc-arm-none-eabi
+        make CC=/usr/bin/gcc-arm-none-eabi PRODUCT=sgm775 MODE=debug firmware-scp_ramfw
         
     
