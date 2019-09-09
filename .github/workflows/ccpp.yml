@@ -9,6 +9,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: make
-      run: make CC=/usr/bin/arm-none-eabi-gcc PRODUCT=sgm775 MODE=debug firmware-scp_ramfw
+    - name: apt install, make
+      run:
+        sudo apt-get install gcc-arm-none-eabi binutils-arm-none-eabi
+        make CC=/usr/bin/arm-none-eabi-gcc PRODUCT=sgm775 MODE=debug firmware-scp_ramfw
+        
     
