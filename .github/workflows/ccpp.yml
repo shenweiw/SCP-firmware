@@ -16,6 +16,6 @@ jobs:
       run: dpkg -L gcc-arm-none-eabi
       
     - name: make
-      run: make CC=/usr/bin/gcc-arm-none-eabi PRODUCT=sgm775 MODE=debug firmware-scp_ramfw
+      run: make CC=/usr/bin/arm-none-eabi-gcc PRODUCT=sgm775 MODE=debug firmware-scp_ramfw
         
     
