@@ -1,0 +1,33 @@
+# run every day of the week from Monday - Friday at 02:00:
+
+on:
+  schedule:
+  - cron: 0 2 * * 1-5
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+    
+    steps:  
+      - uses: actions/checkout@master
+
+      - name: display git remote
+        run: git remote
+
+      - name: display git branch 
+        run: git branch -vvv
+
+      - name: change url
+        run: git remote set-url origin git@github.com:ARM-software/SCP-firmware.git
+        
+      - name: git pull rebase
+        run: git pull --rebase   
+        
+      - name: change url back
+        run: git remote set-url origin git@github.com:shenweiw/SCP-firmware.git
+      
+      - name: git push
+        run: git push
+        
+        
