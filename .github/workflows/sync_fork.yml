@@ -1,6 +1,6 @@
 name: Project sync
 
-on: [schedule]
+on:
   schedule:
   - cron: 0 2 * * 1-5
 
