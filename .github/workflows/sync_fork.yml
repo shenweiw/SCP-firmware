@@ -1,6 +1,7 @@
 # run every day of the week from Monday - Friday at 02:00:
+name: Project sync
 
-on:
+on: 
   schedule:
   - cron: 0 2 * * 1-5
 
